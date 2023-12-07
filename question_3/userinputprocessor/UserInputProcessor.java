@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UserInputProcessor {
 
     // method 'checkInput' to check if the input is a number
-    public static boolean checkInput(int number) {
+    public static boolean checkInput(double number) {
         return true; // Placeholder logic for number check
     }// end method 'checkInput'
 
@@ -24,10 +24,10 @@ public class UserInputProcessor {
         // asking the user to enter something
         System.out.print("Enter something: ");
 
-        // checking if the input is an integer
-        if (scanner.hasNextInt()) {
-            // If input is an integer
-            int numberInput = scanner.nextInt();
+        // checking if the input is an integer/double
+        if (scanner.hasNextDouble()) {
+            // If input is an integer/double (including decimals)
+            double numberInput = scanner.nextDouble();
             // calling the method 'checkInput' to check if the input is a number
             boolean isNumber = checkInput(numberInput);
             // displaying the result
@@ -37,9 +37,9 @@ public class UserInputProcessor {
                 System.out.println("Your value is not a string.");
             }// end ELSE
         } else {
-            // if input is not an integer (considered as a string)
+            // if input is not an integer/double (considered as a string)
             String stringInput = scanner.next();
-            // calling the method to check if the input is a string
+            // calling the 'checkInput' method to check if the input is a string
             boolean isString = checkInput(stringInput);
             // displaying the result
             if (isString) {
